@@ -1,0 +1,34 @@
+int maxSum(int* nums, int numsSize, int k) {
+
+
+     const long long MOD = 1000000007LL;
+    int bits[31] = {0};
+
+    // Count set bits at each position
+    for (int i = 0; i < numsSize; i++) {
+        for (int b = 0; b < 31; b++) {
+            if ((nums[i] >> b) & 1) {
+                bits[b]++;
+            }
+        }
+    }
+
+    long long ans = 0;
+
+    // Construct k maximum numbers
+    for (int i = 0; i < k; i++) {
+        long long x = 0;
+
+        for (int b = 0; b < 31; b++) {
+            if (bits[b] > 0) {
+                x |= (1LL << b);
+                bits[b]--;
+            }
+        }
+
+        ans = (ans + (x * x) % MOD) % MOD;
+    }
+
+    return (int)ans;
+    
+}
