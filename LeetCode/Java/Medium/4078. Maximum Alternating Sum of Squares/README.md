@@ -8,8 +8,8 @@
 Array, Greedy, Sorting
 
 ### 🚀 Performance
-- **Runtime:** N/A
-- **Memory:** N/A
+- **Runtime:** 34 ms
+- **Memory:** 136.7 MB
 
 ---
 
